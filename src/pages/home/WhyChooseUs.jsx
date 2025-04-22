@@ -37,19 +37,20 @@ const WhyChooseUs = () => {
     return (
         <section className="bg-[linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9)),url('/images/bg-image-2.jpg')] bg-cover bg-center flex justify-between items-start w-full px-4 py-5 gap-6 flex-wrap lg:flex-nowrap">
             <div className="flex flex-col justify-start items-start w-full lg:w-[55%] py-10">
-                <h2 className="text-[20px] uppercase font-semibold text-main-color">Mindfully Made Packaging</h2>
+                <h2 className="text-[20px] uppercase font-semibold text-main-color">Mindfully Made Interiors</h2>
                 <p className="text-[30px] font-semibold leading-tight text-main-color py-2">
                     Our Anthem is ‘We’ll Lead with Innovative Excellence.’
                 </p>
               
-                <p className="pt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, enim eaque esse, delectus corrupti expedita officiis sunt blanditiis dicta quidem molestias neque earum distinctio placeat tenetur, labore incidunt voluptatibus veritatis eum repudiandae! Expedita repudiandae similique, veniam rerum accusantium blanditiis quibusdam excepturi iste ullam, quo, vitae natus? Nostrum ipsum volupmo sint quis veritatis quia! Beatae aliquid inventore rem!</p>
+                <p className="pt-5">Choosing the right partner for your interior design or fit-out project makes all the difference — and that’s where we stand out. With years of expertise and hands-on experience in residential, commercial, and hospitality interiors, we bring a unique blend of creativity, precision, and professionalism to every space we transform. We understand that no two projects are alike, which is why we offer tailored solutions that align perfectly with your needs, preferences, and budget. Our team is dedicated to delivering projects on time without ever compromising on quality — because we know deadlines matter. We use only high-quality materials and trusted craftsmanship to ensure that every detail is durable, functional, and aesthetically pleasing. Above all, customer satisfaction is at the heart of everything we do. From concept to completion, we work closely with you to ensure your vision is realized and your expectations are exceeded.</p>
 
-                <p className="py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, enim eaque esse, delectus corrupti expedita officiis sunt blanditiis dicta quidem molestias neque earum distinctio placeatbo voluptatibus corrupti molestiae aliquam, quas suscipit minima iste enim id, voluptatem, cum nemo sint quis veritatis quia! Beatae aliquid inventore rem!</p>
+               
 
                   <div className="w-full grid grid-cols-2 my-3 gap-x-5 gap-y-3">
-                  <Card icon={<RiMedalLine size={20} className="text-main-color" />} title="Safest Product" description="Our personal trainers will help you find a perfect workout." />
-                    <Card icon={<RiMedalLine size={20} className="text-main-color" />} title="Safest Product" description="Our personal trainers will help you find a perfect workout." />
-                    
+                  <Card icon={<RiMedalLine size={20} className="text-main-color" />} title="Purposeful Design" description=" Beauty meets function with every detail." />
+                    <Card icon={<RiMedalLine size={20} className="text-main-color" />} title="Fully Customized" description="Spaces tailored to your style and needs." />
+                    <Card icon={<RiMedalLine size={20} className="text-main-color" />} title="Quality Materials" description="Durable, sustainable, and elegant." />
+                    <Card icon={<RiMedalLine size={20} className="text-main-color" />} title="Client-Centered" description=" Your vision, our priority — every step." />
                 </div>
             </div>
 

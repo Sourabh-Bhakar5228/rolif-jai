@@ -42,11 +42,11 @@ const Clientele = React.memo(() => {
           {Array(12)
             .fill(0)
             .map((_, index) => (
-              <SwiperSlide key={index} className="py-3 mx-2 flex justify-center items-center">
+              <SwiperSlide key={index} className="py-3 mx-2 flex justify-center items-center ">
                 <img
                   src={`/images/clients/${index + 1}.png`}
                   alt={`Client ${index + 1}`}
-                  className="w-48 h-20 object-contain rounded-lg m-0 px-8 border border-solid border-gray-300" // Added h-24 for consistent height
+                  className="w-48 h-20 object-contain rounded-lg m-0 px-8 border border-solid border-gray-300 shadow-md shadow-gray-400" // Added h-24 for consistent height
                 />
               </SwiperSlide>
             ))}
