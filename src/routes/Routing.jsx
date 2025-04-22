@@ -7,10 +7,13 @@ import AdminLayout from "../layouts/AdminLayout";
 // lazy-loaded components
 const Home = lazy(() => import("../pages/home/Home"));
 const AboutUs = lazy(() => import("../pages/about/AboutUs"));
-const Products = lazy(() => import("../pages/products/Products"));
 const Login = lazy(() => import("../pages/validations/Login"));
 const Gallery = lazy(() => import("../pages/gallery/Gallery"));
 const ContactUs = lazy(() => import("../pages/contact/ContactUs"));
+
+// product
+const Products = lazy(() => import("../pages/products/Products"));
+const FurniturePage = lazy(() => import("../pages/products/FurniturePage"));
 const ProductDetails = lazy(() => import("../pages/products/ProductDetails"));
 
 // blogs
@@ -40,6 +43,10 @@ const router = createBrowserRouter([
 
       // Product category routes
       {
+        path: 'furniture',
+        element: <FurniturePage />
+      },
+      {
         path: "furniture/*",
         element: <Products />,
       },
@@ -67,10 +74,6 @@ const router = createBrowserRouter([
       },
       {
         path: "sanitary-ware-details/:id", // Added alternative route
-        element: <ProductDetails />,
-      },
-      {
-        path: "tiles-details/:id", // Added alternative route
         element: <ProductDetails />,
       },
       {

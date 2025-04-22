@@ -7,7 +7,7 @@ const AboutUs = () => {
     return <>
         <Title>About Us</Title>
         <main className="w-full">
-            <img src="/banners/About-us.png" alt="image" />
+            <img src="/banners/About-us.png" alt="image" className="w-full" />
             <WhyChooseUs />
             <ClientTestimonials />
             <Clientele />

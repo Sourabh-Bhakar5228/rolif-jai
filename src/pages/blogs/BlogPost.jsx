@@ -4,7 +4,7 @@ const BlogPost = () => {
     return <>
         <Title>BlogPost</Title>
         <main className="w-full">
-            <img src="/banners/Our-blogs.png" alt="banner image" className="w-auto h-auto" />
+            <img src="/banners/Our-blogs.png" alt="banner image" className="w-full h-auto" />
             <div
                 className="w-full h-auto flex px-4 md:px-8 flex-col py-4 justify-center items-center gap-y-4"
                 style={{

@@ -12,7 +12,7 @@ const ContactUs = () => {
 
     return <>
         <Title>Contact Us</Title>
-        <img src="/banners/contact.png" alt='image' className='w-auto' />
+        <img src="/banners/contact.png" alt='image' className='w-full' />
 
         <main className="container mx-auto px-4 py-4 flex flex-col md:flex-row gap-8">
             {/* Contact Form */}
