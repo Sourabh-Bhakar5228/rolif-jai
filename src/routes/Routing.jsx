@@ -70,6 +70,10 @@ const router = createBrowserRouter([
         element: <ProductDetails />,
       },
       {
+        path: "tiles-details/:id", // Added alternative route
+        element: <ProductDetails />,
+      },
+      {
         path: "electrics-details/:id",
         element: <ProductDetails />,
       },

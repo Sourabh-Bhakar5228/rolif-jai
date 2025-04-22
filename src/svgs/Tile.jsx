@@ -1,4 +1,4 @@
-const FurnitureSvg = ({
+const TileSvg = ({
   className = "",
   size = "300px",
   // width = "300px",
@@ -41,4 +41,4 @@ const FurnitureSvg = ({
   );
 };
 
-export default FurnitureSvg;
+export default TileSvg;
