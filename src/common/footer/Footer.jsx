@@ -9,7 +9,7 @@ import FooterContact from "./FooterContact";
 
 const Footer = () => {
     return <>
-        <footer className="w-full px-8 py-6 pt-20 relative bg-[url('/images/footer-bg.jpg')] bg-cover flex flex-col justify-center items-center gap-y-6 bg-white">
+        <footer className="w-full px-4 lg:px-8 py-6 pt-20 text-main-size relative bg-[url('/images/footer-bg.jpg')] bg-cover flex flex-col justify-center items-center gap-y-6 bg-white">
             <div className="absolute w-full top-0 left-0">
                 <FooterSVG />
             </div>

@@ -43,11 +43,6 @@ const menuLinks = [
         name: "Tiles",
         route: "/tiles-and-sanitary-ware/tiles",
         subMenu: [
-          // { name: 'Floor Tiles', route: '/tiles-and-sanitary-ware/floor-tiles' },
-          // { name: 'Wall Tiles', route: '/tiles-and-sanitary-ware/wall-tiles' },
-          // { name: 'Outdoor Tiles', route: '/tiles-and-sanitary-ware/outdoor-tiles' },
-          // { name: 'Mosaic Tiles', route: '/tiles-and-sanitary-ware/mosaic-tiles' },
-          // { name: 'Custom Tile Solutions', route: '/tiles-and-sanitary-ware/custom-tile-solutions' },
           {
             name: "Living Room",
             route: "/tiles-and-sanitary-ware/tiles/living-room",
@@ -172,7 +167,7 @@ const menuLinks = [
       },
       { name: "Home Appliances", route: "/electrics/home-appliances" },
       { name: "Home Electricals", route: "/electrics/home-electricals" },
-      { name: "small-appliances", route: "/electrics/small-appliances" },
+      { name: "Small Appliances", route: "/electrics/small-appliances" },
       { name: "Smart Home", route: "/electrics/smart-home" },
     ],
   },

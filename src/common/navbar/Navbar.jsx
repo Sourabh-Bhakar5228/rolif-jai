@@ -9,8 +9,29 @@ import StickyNavbar from "./StickyNavbar";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+import MenuButton from "./MenuButton";
+import FurnitureSvg from "../../svgs/furnitureSvg";
+
 const Navbar = () => {
     const [isStickyNavOpen, setIsStickyNavOpen] = useState(false);
+
+    const productLinks = [
+        {
+            route: '/furniture',
+            icon: <FurnitureSvg size="20px" />
+        },
+        {
+            route: "/tiles-and-sanitary-ware",
+        },
+        {
+            route: "/electrics",
+        },
+        {
+            route: "/services",
+        }
+    ].map((item) => (
+        { ...(menuLinks.filter((product) => product.route === item.route)?.[0] || {}), icon: item?.icon }
+    ));
 
     useEffect(() => {
         const handleScroll = () => {
@@ -49,11 +70,13 @@ const Navbar = () => {
                             </button>
                         </Link>
                     </div>
+
+                    <MenuButton />
                 </section>
 
                 {/* layer2 */}
-                <section className="flex justify-center py-2 px-8 bg-main-color !text-gray-50 w-full items-center gap-x-6">
-                    {menuLinks.map((item, index) => (
+                <section className="hidden md:flex justify-center py-2 px-8 bg-main-color !text-gray-50 w-full items-center gap-x-6">
+                    {productLinks.map((item, index) => (
                         <MenuLink key={index} {...item} />
                     ))}
                 </section>

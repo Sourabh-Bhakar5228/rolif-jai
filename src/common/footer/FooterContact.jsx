@@ -42,7 +42,7 @@ const FooterContact = () => {
                 <FooterMap />
                 <FooterForm />
             </div>
-            <div className="w-full rounded-md gap-x-6 gap-y-4 grid grid-cols-3 justify-center items-center">
+            <div className="w-full rounded-md gap-x-6 gap-y-4 grid grid-cols-1 md:grid-cols-3 justify-center items-center">
                 {
                     cards.map((item, index) => (
                         <FooterContactCard key={index} {...item} />

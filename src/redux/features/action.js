@@ -3,13 +3,16 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     sidebar: false,
     sidebarCollapse: false,
+    appSidebar: false,
 }
 
 const actionSlice = createSlice({
     name: 'action',
     initialState,
-    setAction: (state, { payload }) => {
-        return { ...state, ...payload };
+    reducers: {
+        setAction: (state, { payload }) => {
+            return { ...state, ...payload };
+        }
     }
 });
 

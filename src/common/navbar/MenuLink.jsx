@@ -2,13 +2,16 @@ import { Menu, MenuHandler, MenuItem, MenuList } from "@material-tailwind/react"
 import { Link } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 
-const MenuLink = ({ name = '', subMenu = [], route = "" }) => {
+const MenuLink = ({ name = '', subMenu = [], route = "", icon }) => {
   return (
     <Menu animate={{ mount: { y: 0 }, unmount: { y: 25 } }} allowHover>
       <MenuHandler>
         <Link to={`${route}`} className="w-auto h-auto">
           <div className="flex justify-center !outline-none items-center text-main-size gap-x-2 cursor-pointer">
-            <p>{name}</p>
+            <div className="flex justify-start items-center text-gray-100 gap-x-2">
+              {icon}
+              <p>{name}</p>
+            </div>
             <IoIosArrowDown size={16} />
           </div>
         </Link>
