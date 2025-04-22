@@ -14,6 +14,8 @@ const ContactUs = lazy(() => import("../pages/contact/ContactUs"));
 // product
 const Products = lazy(() => import("../pages/products/Products"));
 const FurniturePage = lazy(() => import("../pages/products/FurniturePage"));
+const TilesPage = lazy(() => import("../pages/products/TilesPage"));
+const ElectricsPage = lazy(() => import("../pages/products/ElectricsPage"));
 const ProductDetails = lazy(() => import("../pages/products/ProductDetails"));
 
 // blogs
@@ -45,6 +47,14 @@ const router = createBrowserRouter([
       {
         path: 'furniture',
         element: <FurniturePage />
+      },
+      {
+        path: "tiles-and-sanitary-ware",
+        element: <TilesPage />,
+      },
+      {
+        path: "electrics",
+        element: <ElectricsPage />,
       },
       {
         path: "furniture/*",
