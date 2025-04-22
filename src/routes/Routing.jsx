@@ -43,8 +43,8 @@ const router = createBrowserRouter([
 
       // Product category routes
       {
-        path: 'furniture',
-        element: <FurniturePage />
+        path: "furniture",
+        element: <FurniturePage />,
       },
       {
         path: "furniture/*",
@@ -74,6 +74,10 @@ const router = createBrowserRouter([
       },
       {
         path: "sanitary-ware-details/:id", // Added alternative route
+        element: <ProductDetails />,
+      },
+      {
+        path: "tiles-details/:id", // Added alternative route
         element: <ProductDetails />,
       },
       {

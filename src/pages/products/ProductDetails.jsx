@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import PrBanner from "../../assets/3-rolif-india.png";
 
 const ProductDetails = () => {
   const navigate = useNavigate();
@@ -52,9 +53,9 @@ const ProductDetails = () => {
   return (
     <>
       <img
-        src="https://images.unsplash.com/photo-1653251307042-c5821df9d527?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c29mYSUyMDYlMjBzZWF0ZXJ8ZW58MHx8MHx8fDA%3D"
+        src={PrBanner}
         alt="banner"
-        className="w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] object-cantain mb-8"
+        className="w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[50vh] object-cover mb-8"
       />
 
       <main className="w-full px-4 lg:px-8 py-6">
