@@ -24,7 +24,7 @@ const ClientTestimonials = () => {
 
                 <Swiper
                     ref={swiperRef}
-                    modules={[Pagination, Autoplay]}
+                    modules={[ Autoplay]}
                     spaceBetween={20}
                     slidesPerView={1}
                     autoplay={{ delay: 1200, disableOnInteraction: false }}
