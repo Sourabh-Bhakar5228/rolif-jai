@@ -72,7 +72,7 @@ const TruckAnimation = () => {
   };
 
   return (
-    <div className="relative h-64 w-full overflow-hidden bg-sky-100">
+    <div className="relative h-40 w-full overflow-hidden bg-sky-100">
       {/* Siren Sound */}
       <audio ref={audioRef} loop preload="auto">
         <source src={SirenSound} type="audio/mpeg" />

@@ -70,7 +70,8 @@ const router = createBrowserRouter([
       },
       {
         path: "services/*",
-        element: <Products />,
+        // element: <Products />,
+        element: <h2 className="text-2xl my-4 text-center w-full">Coming Soon...!</h2>
       },
 
       // Product details routes

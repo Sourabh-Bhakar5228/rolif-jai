@@ -5,6 +5,7 @@ import CollapseProvider from "./CollapseProvider";
 import { ThemeProvider } from "@material-tailwind/react";
 import customTheme from "../theme/customTheme";
 import { Suspense } from "react";
+import Loading from "../components/loading/Loading";
 
 const AppProvider = ({
     children
@@ -14,7 +15,7 @@ const AppProvider = ({
             <CollapseProvider>
                 <HeadProvider>
                     <ThemeProvider value={customTheme}>
-                        <Suspense fallback={<h2>Loading...</h2>}>
+                        <Suspense fallback={<Loading />}>
                             {children}
                         </Suspense>
                     </ThemeProvider>

@@ -10,7 +10,7 @@ import TilesAbout from "../../components/TilesAbout";
 import ElectricAbout from "../../components/ElectricAbout";
 import EpcAbout from "../../components/EpcAbout";
 import Heading from "../../components/heading/Heading";
-import Review from "./Review";
+// import Review from "./Review";
 
 const Home = () => {
   const sliderImages = [
@@ -90,7 +90,7 @@ const Home = () => {
       <FurnitureSlider sliderImages={sliderImages2} />
       <FurnitureGrid products={products2} />
 
-      <Review />
+      {/* <Review /> */}
       {/* <Heading>EPC Projects</Heading>
       <EpcAbout />
       <FurnitureSlider sliderImages={sliderImages} />

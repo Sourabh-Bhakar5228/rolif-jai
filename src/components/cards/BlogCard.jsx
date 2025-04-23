@@ -10,7 +10,9 @@ const BlogCard = ({
 }) => {
     return <>
         <div className="w-full h-auto bg-white flex flex-col justify-start items-start gap-y-4">
-            <img src={image} alt="image" className="w-full h-auto" />
+            <div className="w-full h-[200px] overflow-hidden">
+                <img src={image} alt="image" className="w-full h-full object-cover" />
+            </div>
             <div className="w-full flex flex-col justify-start items-start px-3 pb-2 gap-y-2">
                 <h2 className="font-semibold">{title}</h2>
                 <p className="text-main-size">{description.substring(0, 120) + "..."}</p>
