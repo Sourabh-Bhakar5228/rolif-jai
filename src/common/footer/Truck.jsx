@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import TruckImg from "../../assets/truck.png"; // Adjust path to your truck image
+import TruckImg from "../../assets/truck.png"; // Adjust path to your truck image - change
 import SirenSound from "../../assets/polic-rolif.mp3"; // Import the audio file directly
 
 const TruckAnimation = () => {
