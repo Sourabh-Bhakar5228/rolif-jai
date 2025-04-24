@@ -21,19 +21,19 @@ const Navbar = () => {
   const productLinks = [
     {
       route: "/furniture",
-      icon: <FurnitureSvg size="28px" />,
+      icon: <FurnitureSvg size="30px" />,
     },
     {
       route: "/tiles-and-sanitary-ware",
-      icon: <TileSvg size="32px" />,
+      icon: <TileSvg size="34px" />,
     },
     {
       route: "/electrics",
-      icon: <LightSvg size="28px" />,
+      icon: <LightSvg size="30px" />,
     },
     {
       route: "/services",
-      icon: <ServicesSvg size="28px" />,
+      icon: <ServicesSvg size="30px" />,
     },
   ].map((item) => ({
     ...(menuLinks.filter((product) => product.route === item.route)?.[0] || {}),
@@ -59,13 +59,19 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full flex flex-col z-50 shadow-sm justify-center items-center">
+      <nav className="w-full flex flex-col z-50 shadow-sm justify-center items-center"
+      >
         {/* layer1 */}
-        <section className="w-full bg-my-gray flex justify-between items-center py-3 px-8">
+        <section className="w-full bg-cover bg-bottom bg-no-repeat flex justify-between items-center py-3 px-8"
+          style={{
+            background: "linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('/images/nav-bg.png')"
+          }}
+        >
           <div className="flex justify-center items-center gap-x-8">
             <img src="/logo.svg" alt="logo" className="w-26" />
-            <SearchBar />
           </div>
+
+          <SearchBar />
 
           <div className="hidden lg:flex justify-center items-center gap-x-4">
             {navLinks.map((item, index) => (
@@ -85,7 +91,7 @@ const Navbar = () => {
         </section>
 
         {/* layer2 */}
-        <section className="hidden md:flex justify-center py-2 px-8 bg-main-color !text-gray-50 w-full items-center gap-x-6">
+        <section className="hidden md:flex justify-center border-t border-solid border-gray-200 py-2 px-8 bg-gray-50 !text-gray-900 w-full items-center gap-x-6 xl:gap-x-10">
           {productLinks.map((item, index) => (
             <MenuLink key={index} {...item} />
           ))}
@@ -93,7 +99,7 @@ const Navbar = () => {
       </nav>
 
       {/* Pass the state to StickyNavbar if needed */}
-      <StickyNavbar isOpen={isStickyNavOpen} />
+      <StickyNavbar isOpen={isStickyNavOpen} productLinks={productLinks} />
     </>
   );
 };

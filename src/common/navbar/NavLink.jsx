@@ -7,7 +7,7 @@ const NavLink = ({
 }) => {
     const { pathname } = useLocation();
     return <>
-        <Link to={route} className={`${pathname === route ? 'navlink-active': 'navlink'} text-main-size`}>{name}</Link>
+        <Link to={route} className={`${pathname === route ? 'navlink-active': 'navlink'} font-semibold text-gray-900 text-main-size`}>{name}</Link>
     </>
 }
 

@@ -8,7 +8,7 @@ const MenuLink = ({ name = '', subMenu = [], route = "", icon }) => {
       <MenuHandler>
         <Link to={`${route}`} className="w-auto !outline-none h-auto">
           <div className="flex justify-center !outline-none items-center text-main-size gap-x-2 cursor-pointer">
-            <div className="flex justify-start items-center text-gray-100 gap-x-2">
+            <div className="flex justify-start items-center text-gray-900 font-semibold gap-x-2">
               {icon}
               <p>{name}</p>
             </div>
@@ -24,7 +24,7 @@ const MenuLink = ({ name = '', subMenu = [], route = "", icon }) => {
               <MenuHandler>
                 <MenuItem className="p-0 w-full !outline-none">
                   <Link to={`${item.route}`} className="w-auto !outline-none h-auto">
-                    <div className="w-full flex justify-between items-center py-2 px-3 rounded-lg hover:bg-main-color hover:text-white">
+                    <div className="w-full flex justify-between items-center py-2 px-3 text-gray-900 font-medium rounded-lg hover:bg-main-color hover:text-white">
                       <p>{item.name}</p>
                       <IoIosArrowDown size={16} className="-rotate-90" />
                     </div>
@@ -38,7 +38,7 @@ const MenuLink = ({ name = '', subMenu = [], route = "", icon }) => {
                     <Menu key={subIndex} placement="right-start" allowHover offset={10}>
                       <MenuHandler>
                         <MenuItem className="p-0 w-full !outline-none">
-                          <div className="w-full flex justify-between items-center py-2 px-3 rounded-lg hover:bg-main-color hover:text-white">
+                          <div className="w-full flex justify-between items-center py-2 px-3 text-gray-900 font-medium rounded-lg hover:bg-main-color hover:text-white">
                             <p>{subItem.name}</p>
                             <IoIosArrowDown size={16} className="-rotate-90" />
                           </div>
@@ -50,7 +50,7 @@ const MenuLink = ({ name = '', subMenu = [], route = "", icon }) => {
                           <MenuItem key={thirdIndex} className="p-0 !outline-none">
                             <Link
                               to={thirdItem.route}
-                              className="w-full flex justify-start !outline-none items-center py-2 px-3 rounded-lg text-sm text-gray-700 hover:bg-main-color hover:text-white"
+                              className="w-full flex justify-start !outline-none items-center py-2 px-3 rounded-lg text-sm text-gray-900 font-medium hover:bg-main-color hover:text-white"
                             >
                               {thirdItem.name}
                             </Link>
@@ -62,7 +62,7 @@ const MenuLink = ({ name = '', subMenu = [], route = "", icon }) => {
                     <MenuItem key={subIndex} className="p-0 !outline-none">
                       <Link
                         to={subItem.route}
-                        className="w-full flex justify-start !outline-none items-center py-2 px-3 rounded-lg text-sm text-gray-700 hover:bg-main-color hover:text-white"
+                        className="w-full flex justify-start !outline-none items-center text-gray-900 font-medium py-2 px-3 rounded-lg text-sm hover:bg-main-color hover:text-white"
                       >
                         {subItem.name}
                       </Link>
@@ -75,7 +75,7 @@ const MenuLink = ({ name = '', subMenu = [], route = "", icon }) => {
             <MenuItem key={index} className="p-0 w-full !outline-none">
               <Link
                 to={item.route}
-                className="w-full flex justify-start items-center !outline-none py-2 px-3 rounded-lg hover:bg-main-color hover:text-white"
+                className="w-full flex justify-start items-center !outline-none text-gray-900 font-semibold py-2 px-3 rounded-lg hover:bg-main-color hover:text-white"
               >
                 {item.name}
               </Link>

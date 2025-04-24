@@ -1,6 +1,7 @@
 const LightSvg = ({
   className = "",
   size = "300px",
+  color = "#000",
   // width = "300px",
   // height = "300px"
 }) => {
@@ -18,7 +19,7 @@ const LightSvg = ({
         {" "}
         <g
           transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)"
-          fill="#fff"
+          fill={color}
           stroke="none"
         >
           {" "}
