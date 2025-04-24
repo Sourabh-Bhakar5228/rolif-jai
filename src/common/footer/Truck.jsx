@@ -104,7 +104,9 @@ const TruckAnimation = () => {
         </div>
 
         {/* Truck with Click + Siren Light */}
-        <div className="relative cursor-pointer" onClick={handleTruckClick}>
+        <div className="relative" 
+        // onClick={handleTruckClick}
+        >
           {/* Siren Lights - make them more visible when audio is playing */}
           {/* <div className="absolute -top-2 left-1/2 -translate-x-1/2 flex gap-1 z-20">
             <div
@@ -127,12 +129,12 @@ const TruckAnimation = () => {
       </div>
 
       {/* Road */}
-      <div className="absolute bottom-0 w-full h-12 bg-gray-700">
+      {/* <div className="absolute bottom-0 w-full h-12 bg-gray-700">
         <div className="absolute top-1/2 left-0 right-0 h-1 bg-yellow-300 transform -translate-y-1/2"></div>
         <div className="absolute top-1/2 left-1/4 h-1 w-8 bg-yellow-300 transform -translate-y-1/2"></div>
         <div className="absolute top-1/2 left-1/2 h-1 w-8 bg-yellow-300 transform -translate-y-1/2"></div>
         <div className="absolute top-1/2 left-3/4 h-1 w-8 bg-yellow-300 transform -translate-y-1/2"></div>
-      </div>
+      </div> */}
 
       {/* Animation styles */}
       <style jsx>{`

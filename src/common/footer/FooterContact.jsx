@@ -12,15 +12,18 @@ const FooterContact = () => {
         {
             icon: <IoLocationSharp size={25} />,
             title: "Address",
-            content: '123 Fifth Avenue, NY 10160 Lane no 17, New York NY688101',
+            content: <>
+                <div className='text-sm'>
+                    <a href="https://maps.app.goo.gl/4AacSv4HkyfR3LEV7" className='text-gray-900 block hover:text-blue-300 text-sm' target='_blank'>Plot no 15, Greater Noida W Rd, opp. gaurecity 2, Yusufpur, Nai Basti Dundahera, Ghaziabad, Uttar Pradesh 201009</a>
+                </div>
+            </>,
         },
         {
             icon: <IoIosCall size={25} />,
             title: 'Call Us',
             content: <>
-                <div>
-                    <p>123-456-7890,</p>
-                    <p>123-456-7891</p>
+                <div className=" text-main-size">
+                    <a href="tel:+08062679687" className='text-gray-900 hover:text-blue-300'>08062679687</a>
                 </div>
             </>
         },
@@ -28,9 +31,9 @@ const FooterContact = () => {
             icon: <MdEmail size={25} />,
             title: 'Email',
             content: <>
-                <div>
-                    <p>contact@example.com</p>
-                    <p>hello@example.com</p>
+                <div className="text-main-size">
+                    <a href='mailto:info@rolifindia.com' className='text-gray-900 block hover:text-blue-300'>info@rolifindia.com</a>
+                    <a href='mailto:rolifindia@gmail.com' className='text-gray-900 block hover:text-blue-300'>rolifindia@gmail.com</a>
                 </div>
             </>
         }

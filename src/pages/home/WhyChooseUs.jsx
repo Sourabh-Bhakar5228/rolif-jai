@@ -70,7 +70,7 @@ const WhyChooseUs = () => {
                             disableOnInteraction: false,
                         }}
                         modules={[Autoplay]}
-                        className="h-[500px] bg-gray-100"
+                        className="h-[600px] bg-gray-100"
                     >
                         {images.map((item, index) => (
                             <SwiperSlide key={index} className="!flex !justify-center !py-0 !my-0">
@@ -98,7 +98,7 @@ const WhyChooseUs = () => {
                             disableOnInteraction: false,
                         }}
                         modules={[Autoplay]}
-                        className="h-[500px] bg-gray-100"
+                        className="h-[600px] bg-gray-100"
                     >
                         {images2.map((item, index) => (
                             <SwiperSlide key={index} className="!flex !justify-center">

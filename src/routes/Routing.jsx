@@ -17,6 +17,7 @@ const FurniturePage = lazy(() => import("../pages/products/FurniturePage"));
 const TilesPage = lazy(() => import("../pages/products/TilesPage"));
 const ElectricsPage = lazy(() => import("../pages/products/ElectricsPage"));
 const ProductDetails = lazy(() => import("../pages/products/ProductDetails"));
+const ProductDetailsPage = lazy(() => import("../pages/products/ProductDetailsPage"));
 
 // blogs
 const Blogs = lazy(() => import("../pages/blogs/Blogs"));
@@ -77,27 +78,28 @@ const router = createBrowserRouter([
       // Product details routes
       {
         path: "furniture-details/:id",
-        element: <ProductDetails />,
+        // element: <ProductDetails />,
+        element: <ProductDetailsPage />,
       },
       {
         path: "tiles-and-sanitary-ware-details/:id",
-        element: <ProductDetails />,
+        element: <ProductDetailsPage />,
       },
       {
         path: "sanitary-ware-details/:id", // Added alternative route
-        element: <ProductDetails />,
+        element: <ProductDetailsPage />,
       },
       {
         path: "tiles-details/:id", // Added alternative route
-        element: <ProductDetails />,
+        element: <ProductDetailsPage />,
       },
       {
         path: "electrics-details/:id",
-        element: <ProductDetails />,
+        element: <ProductDetailsPage />,
       },
       {
         path: "services-details/:id",
-        element: <ProductDetails />,
+        element: <ProductDetailsPage />,
       },
 
       // Blog routes

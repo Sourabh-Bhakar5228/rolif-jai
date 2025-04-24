@@ -14,7 +14,7 @@ const FooterLinksCard = ({
                         <Link
                             key={index}
                             to={it.route}
-                            className="cursor-pointer group text-black flex items-center gap-x-2 transition-all duration-200 hover:text-blue-700"
+                            className="cursor-pointer group font-medium text-black flex items-center gap-x-2 transition-all duration-200 hover:text-blue-700"
                         >
                             <div className="relative flex items-center">
                                 {/* Arrow (FaPlay) initially invisible, becomes visible on hover and sits at same place as text start */}

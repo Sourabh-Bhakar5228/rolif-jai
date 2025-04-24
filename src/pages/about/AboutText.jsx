@@ -4,7 +4,7 @@ import AboutCard from '../../components/AboutCard'
 
 const AboutText = () => {
   return (
-    <div className="container mx-auto px-4 py-4 md:py-16">
+    <div className="container mx-auto px-4 py-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}

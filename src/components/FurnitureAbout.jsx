@@ -30,7 +30,7 @@ const FurnitureAbout = ({
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
         {/* Left Content */}
         <div className="md:w-1/2 space-y-6">
-          <h2 className="text-4xl font-bold text-blue-600 leading-snug">
+          <h2 className="text-4xl font-bold text-main-color leading-snug">
             Elevate Your Space with
             <span className="text-gray-700 block text-3xl mt-2">Luxurious Furniture</span>
           </h2>

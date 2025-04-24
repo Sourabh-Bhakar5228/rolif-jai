@@ -1,6 +1,6 @@
 const Heading = ({ children }) => {
     return (
-      <div className="w-full font-semibold text-[28px] my-8 flex justify-center items-center gap-x-4 relative">
+      <div className="w-full font-semibold text-[20px] sm:text-[28px] my-8 flex justify-center items-center gap-x-4 relative">
         {/* Left decorative pattern */}
         <div className="flex items-center gap-x-1">
           <div className="w-4 h-4 bg-amber-500 rotate-45"></div>

@@ -20,14 +20,9 @@ const Footer = () => {
         <FooterContact />
 
         {/* layer 2 */}
-        <section className="w-full grid grid-cols-1 sm:grid-cols-2 justify-start items-start lg:grid-cols-[1.5fr_1fr_1.5fr_3fr] gap-6">
+        <section className="w-full grid grid-cols-1 sm:grid-cols-2 justify-start items-start lg:grid-cols-[1.5fr_1fr_1.5fr_1.5fr] gap-6">
           <div className="flex flex-col justify-start items-start">
             <img src="/logo.svg" alt="image" className="w-36" />
-            {/* <p className="my-3 font-semibold text-main-color">123 Fifth Avenue, NY 10160 Lane no 17, New York NY688101</p>
-                    <div className="flex justify-start items-center gap-x-2">
-                        <IoIosCall size={16} />
-                        <span>123-456-7890, 123-456-7891</span>
-                    </div> */}
             <p className="leading-tight my-2">
               The Company “ROLIF INDIA PVT. LTD., started business services in
               2013 as Lighting Solutions. Later the company became EPC
@@ -45,10 +40,9 @@ const Footer = () => {
                 <Link
                   key={index}
                   to={item.route}
-                  className="cursor-pointer group  flex items-center gap-x-2 transition-all duration-200 hover:text-blue-700"
+                  className="cursor-pointer group font-medium flex items-center gap-x-2 transition-all duration-200 hover:text-blue-700"
                 >
                   <div className="relative flex items-center">
-                    {/* Arrow (FaPlay) initially invisible, becomes visible on hover and sits at same place as text start */}
                     <FaPlay
                       size={12}
                       className="absolute left-0 opacity-0 group-hover:opacity-100 transition-all duration-300"
@@ -68,11 +62,12 @@ const Footer = () => {
           </div>
 
           <div className="w-full flex flex-col justify-start items-start">
-            <div className="grid grid-cols-[1.5fr_2fr] w-full gap-x-5 gap-y-4">
-              <FooterLinksCard item={menuLinks[0]} />
+            {/* <div className="grid grid-cols-[1.5fr_2fr] w-full gap-x-5 gap-y-4"> */}
+            <div className="grid grid-cols-1 w-full gap-x-5 gap-y-4">
               <div className="grid grid-cols-1 gap-y-2 w-full">
+              <FooterLinksCard item={menuLinks[0]} />
                 <FooterLinksCard item={menuLinks[1]} />
-                <FooterLinksCard item={menuLinks[3]} />
+                {/* <FooterLinksCard item={menuLinks[3]} /> */}
               </div>
             </div>
           </div>

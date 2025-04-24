@@ -100,7 +100,7 @@ const ClientTestimonials = () => {
         </div>
 
         {/* Custom pagination */}
-        <div className="testimonial-pagination text-center mt-4"></div>
+        <div className="testimonial-pagination text-center mt-0"></div>
       </div>
     </section>
   );
