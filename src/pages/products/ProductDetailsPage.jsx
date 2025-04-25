@@ -1,9 +1,17 @@
 import { useState } from 'react';
 import { FaStar, FaRegStar, FaShoppingCart, FaHeart, FaShareAlt } from 'react-icons/fa';
+import { IoIosCall } from "react-icons/io";
 import { FiTruck } from 'react-icons/fi';
 import { RiSecurePaymentLine } from 'react-icons/ri';
 import { BiArrowBack } from 'react-icons/bi';
 import FurnitureSlider from '../../components/FurnitureSlider';
+import ImageViewer from './ImageViewer';
+import ProductDetailsTable from './ProductDetailsTable';
+import { Button } from '@material-tailwind/react';
+import NumberModal from '../../components/modals/NumberModal';
+import GetBestPriceModal from '../../components/modals/GetBestPriceModal';
+import AddReview from './AddReview';
+import ShareButton from '../../components/buttons/ShareButton';
 
 const ProductDetailsPage = () => {
     // Sample product data - replace with your actual data
@@ -11,15 +19,15 @@ const ProductDetailsPage = () => {
         id: 1,
         title: "Premium Wooden Dining Table",
         description: "Handcrafted from solid oak wood, this dining table combines durability with elegant design. Perfect for family gatherings and dinner parties. Features a smooth finish and sturdy construction.",
-        price: 599.99,
-        discountPrice: 499.99,
+        price: 599.00,
+        discountPrice: 499.00,
         rating: 4.5,
         reviewCount: 128,
         images: [
-            "/placeholder-product-1.jpg",
-            "/placeholder-product-2.jpg",
-            "/placeholder-product-3.jpg",
-            "/placeholder-product-4.jpg",
+            "https://m.media-amazon.com/images/I/71u3F2NZ9gL.jpg",
+            "https://m.media-amazon.com/images/I/610sNIpxQ7L._AC_UF894,1000_QL80_.jpg",
+            "https://m.media-amazon.com/images/I/61cEjmXGHUL._AC_UF894,1000_QL80_.jpg",
+            "https://s.alicdn.com/@sc04/kf/H289738d3e7034f438fdcd00cc73c32b8z.jpg_720x720q50.jpg",
         ],
         colors: ["#5F4B32", "#3E3E3E", "#D4A76A"],
         dimensions: "180cm × 90cm × 75cm",
@@ -88,8 +96,9 @@ const ProductDetailsPage = () => {
         },
     ];
 
-    const [selectedImage, setSelectedImage] = useState(0);
-    const [quantity, setQuantity] = useState(1);
+    // const [quantity, setQuantity] = useState(1);
+    const [isNumberModalOpen, setIsNumberModalOpen] = useState(false);
+    const [isGetModalOpen, setIsGetModalOpen] = useState(false);
 
     const renderRatingStars = () => {
         const stars = [];
@@ -110,38 +119,24 @@ const ProductDetailsPage = () => {
     };
 
     return <>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <NumberModal
+            isOpen={isNumberModalOpen}
+            setIsOpen={setIsNumberModalOpen}
+        />
+        <GetBestPriceModal
+            isOpen={isGetModalOpen}
+            setIsOpen={setIsGetModalOpen}
+        />
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
             {/* Back button */}
-            <button className="flex items-center text-gray-600 hover:text-gray-900 mb-6">
+            <button className="flex items-center cursor-pointer  text-gray-600 hover:text-gray-900 mb-6" onClick={() => window.history.back()}>
                 <BiArrowBack className="mr-2" /> Back to Products
             </button>
 
             {/* Section 1: Product Image with Title, Description, Price, Rating */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 {/* Product Images */}
-                <div>
-                    {/* Main Image */}
-                    <div className="bg-gray-100 rounded-lg overflow-hidden mb-4 h-96 flex items-center justify-center">
-                        <img
-                            src={product.images[selectedImage]}
-                            alt={product.title}
-                            className="object-contain w-full h-full"
-                        />
-                    </div>
-
-                    {/* Thumbnail Gallery */}
-                    <div className="grid grid-cols-4 gap-3">
-                        {product.images.map((img, index) => (
-                            <button
-                                key={index}
-                                onClick={() => setSelectedImage(index)}
-                                className={`bg-gray-100 rounded-md overflow-hidden h-24 flex items-center justify-center border-2 ${selectedImage === index ? 'border-blue-500' : 'border-transparent'}`}
-                            >
-                                <img src={img} alt={`Thumbnail ${index + 1}`} className="object-contain w-full h-full" />
-                            </button>
-                        ))}
-                    </div>
-                </div>
+                <ImageViewer product={product} />
 
                 {/* Product Info */}
                 <div>
@@ -157,10 +152,10 @@ const ProductDetailsPage = () => {
 
                     {/* Price */}
                     <div className="mb-6">
-                        <span className="text-3xl font-bold text-gray-900">${product.discountPrice.toFixed(2)}</span>
+                        <span className="text-3xl font-bold text-gray-900">₹ {product.discountPrice.toFixed(2)}</span>
                         {product.discountPrice < product.price && (
                             <>
-                                <span className="text-lg text-gray-700 line-through ml-2">${product.price.toFixed(2)}</span>
+                                <span className="text-lg text-gray-700 line-through ml-2">₹ {product.price.toFixed(2)}</span>
                                 <span className="bg-red-100 text-red-800 text-sm font-medium ml-2 px-2 py-0.5 rounded">
                                     {Math.round((1 - product.discountPrice / product.price) * 100)}% OFF
                                 </span>
@@ -186,41 +181,26 @@ const ProductDetailsPage = () => {
                         </div>
                     </div>
 
-                    {/* Quantity */}
-                    <div className="mb-6">
-                        <h3 className="text-sm font-medium text-gray-900 mb-2">Quantity</h3>
-                        <div className="flex items-center">
-                            <button
-                                onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                                className="bg-gray-200 px-3 py-1 rounded-l-md hover:bg-gray-300"
-                            >
-                                -
-                            </button>
-                            <span className="bg-gray-100 px-4 py-1 border-t border-b border-gray-200">{quantity}</span>
-                            <button
-                                onClick={() => setQuantity(quantity + 1)}
-                                className="bg-gray-200 px-3 py-1 rounded-r-md hover:bg-gray-300"
-                            >
-                                +
-                            </button>
-                        </div>
+                    {/* Action Buttons */}
+                    <div className="flex flex-col md:flex-row gap-3 mb-8">
+                        <Button className="flex-1 cursor-pointer normal-case text-[15px] hover:shadow shadow-none bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-md font-medium flex items-center justify-center"
+                            onClick={() => setIsGetModalOpen(true)}
+                        >
+                            Get Best Price
+                        </Button>
+                        <Button className="flex-1 bg-green-700 normal-case text-[15px] shadow-none hover:shadow cursor-pointer hover:bg-green-800 text-white py-2 px-6 rounded-md font-medium flex items-center justify-center"
+                            onClick={() => setIsNumberModalOpen(true)}
+                        >
+                            <IoIosCall size={20} className="mr-2" /> Show Number
+                        </Button>
+                        <ShareButton />
                     </div>
 
-                    {/* Action Buttons */}
-                    <div className="flex flex-wrap gap-3 mb-8">
-                        <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-md font-medium flex items-center justify-center">
-                            <FaShoppingCart className="mr-2" /> Add to Cart
-                        </button>
-                        <button className="flex-1 bg-white border border-gray-300 hover:bg-gray-100 text-gray-800 py-3 px-6 rounded-md font-medium flex items-center justify-center">
-                            <FaHeart className="mr-2 text-red-500" /> Wishlist
-                        </button>
-                        <button className="bg-white border border-gray-300 hover:bg-gray-100 text-gray-800 p-3 rounded-md">
-                            <FaShareAlt />
-                        </button>
-                    </div>
+                    {/* Review */}
+                    <AddReview />
 
                     {/* Delivery Info */}
-                    <div className="bg-gray-100 p-4 rounded-lg">
+                    {/* <div className="bg-gray-100 p-4 rounded-lg">
                         <div className="flex items-center mb-2">
                             <FiTruck className="text-green-600 mr-2" />
                             <span className="font-medium">Free Delivery</span>
@@ -231,7 +211,7 @@ const ProductDetailsPage = () => {
                             <span className="font-medium">Secure Payment</span>
                             <span className="text-gray-600 ml-auto">SSL Encryption</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
@@ -240,67 +220,12 @@ const ProductDetailsPage = () => {
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Product Details</h2>
 
                 {/* Furniture Details */}
-                <div className="mb-8">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Furniture Specifications</h3>
-                    <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                        <table className="min-w-full divide-y divide-gray-200">
-                            <tbody className="bg-white divide-y divide-gray-200">
-                                {furnitureDetails.map((detail, index) => (
-                                    <tr key={index}>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 bg-gray-100">
-                                            {detail.label}
-                                        </td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                                            {detail.value}
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                <ProductDetailsTable productDetails={furnitureDetails} type='furniture' />
 
                 {/* Tiles Details (example) */}
-                <div className="mb-8">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Tiles Specifications</h3>
-                    <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                        <table className="min-w-full divide-y divide-gray-200">
-                            <tbody className="bg-white divide-y divide-gray-200">
-                                {tilesDetails.map((detail, index) => (
-                                    <tr key={index}>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 bg-gray-100">
-                                            {detail.label}
-                                        </td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                                            {detail.value}
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                <ProductDetailsTable productDetails={tilesDetails} type='tiles' />
 
-                {/* Sanitary Ware Details (example) */}
-                <div className="mb-8">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Sanitary Ware Specifications</h3>
-                    <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                        <table className="min-w-full divide-y divide-gray-200">
-                            <tbody className="bg-white divide-y divide-gray-200">
-                                {sanitaryDetails.map((detail, index) => (
-                                    <tr key={index}>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 bg-gray-100">
-                                            {detail.label}
-                                        </td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                                            {detail.value}
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                <ProductDetailsTable productDetails={sanitaryDetails} type='sanitary' />
             </div>
 
             {/* Additional HTML Content */}

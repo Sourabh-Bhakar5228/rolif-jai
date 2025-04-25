@@ -12,7 +12,12 @@ const Footer = () => {
   return (
     <>
       <Truck />
-      <footer className="w-full px-4 lg:px-8 py-6 pt-20 text-main-size relative bg-[url('/images/footer-bg.jpg')] bg-cover flex flex-col justify-center items-center gap-y-6 bg-white">
+      {/* <footer className="w-full px-4 lg:px-8 py-6 pt-20 text-main-size relative bg-[url('/images/footer-bg.jpg')] bg-cover flex flex-col justify-center items-center gap-y-6 bg-white"> */}
+      <footer className="w-full px-4 lg:px-8 py-6 pt-20 text-main-size relative bg-cover bg-no-repeat bg-center flex flex-col justify-center items-center gap-y-6"
+      style={{
+        background: "linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)),url('/images/bg-image.jpg')"
+      }}
+      >
         <div className="absolute w-full top-0 left-0">
           <FooterSVG />
         </div>
@@ -74,7 +79,7 @@ const Footer = () => {
         </section>
         <div className="h-[1px] w-full bg-black"></div>
         {/* layer 3 */}
-        <section className="w-full font-medium flex justify-between items-center">
+        <section className="w-full font-medium flex flex-col gap-y-2 md:flex-row justify-between items-center">
           <span>© 2025 Rolif India. All Rights Reserved.</span>
           <span>
             Designed & Developed by{" "}
